@@ -1,9 +1,17 @@
 nyan_logger
 ===========
 
-Nyan cat `logging.Formatter` implementation. Why? Because [of this](http://i.imgur.com/BTNIDBR.gif).
+Nyan cat `logging.Formatter` implementation - https://pypi.python.org/pypi/nyan_logger
 
-## Usage
+## Install
+
+```
+pip install nyan_logger
+```
+
+## Example
+
+Print the lyrics to the nyan cat song:
 
 ```python
 import logging
@@ -16,6 +24,10 @@ handler = logging.StreamHandler()
 formatter = NyanFormatter()
 handler.setFormatter(formatter)
 logger.addHandler(handler)
+
+logger.setLevel(logging.INFO)
+for _ in xrange(90):
+    logger.info('nyan')
 ```
 
 ## Screenshot
