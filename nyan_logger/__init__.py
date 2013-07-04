@@ -34,7 +34,7 @@ class NyanFormatter(logging.Formatter):
         :rtype: string
         """
 
-        log_message = str(record.msg)
+        log_message = logging.Formatter.format(self, record)
 
         # Split the log message on line breaks.
         msgs = log_message \
@@ -66,4 +66,7 @@ class NyanFormatter(logging.Formatter):
 
             lines.append(line)
 
-        return '\n'.join(lines)
+        log_message = '\n'.join(lines)
+        setattr(record, 'msg', log_message)
+
+        return log_message
