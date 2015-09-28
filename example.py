@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import logging
 from nyan_logger import NyanFormatter
 
@@ -8,5 +9,5 @@ handler = logging.StreamHandler()
 handler.setFormatter(NyanFormatter())
 logger.addHandler(handler)
 
-for _ in xrange(18 * 20):
+for _ in range(18 * 20):
     logger.info('nyan')

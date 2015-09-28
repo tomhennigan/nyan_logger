@@ -49,9 +49,9 @@ class NyanFormatter(logging.Formatter):
             # Turn msg into line by combining the animation coloring for each
             # "pixel" in the row with it's corresponding character in msg.
             line = ''
-            for pixel in self.animation.next():
+            for pixel in next(self.animation):
                 try:
-                    character = msg.next()
+                    character = next(msg)
                 except StopIteration:
                     character = ' '
 
