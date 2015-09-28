@@ -1,27 +1,26 @@
 import logging
 from .nyan import infinite_nyan
-from itertools import cycle
 
 nyan_colors = {
-    ' ': "\033[48;5;17m",   # Blue background
-    ',': "\033[0m",         # Reset styles.
-    '.': "\033[48;5;15m",   # White stars
-    "'": "\033[48;5;0m",    # Black border
+    ' ': "\033[48;5;17m",  # Blue background
+    ',': "\033[0m",  # Reset styles.
+    '.': "\033[48;5;15m",  # White stars
+    "'": "\033[48;5;0m",  # Black border
     '@': "\033[48;5;230m",  # Tan poptart
     '$': "\033[48;5;175m",  # Pink poptart
     '-': "\033[48;5;162m",  # Red poptart
-    '>': "\033[48;5;9m",    # Red rainbow
+    '>': "\033[48;5;9m",  # Red rainbow
     '&': "\033[48;5;202m",  # Orange rainbow
-    '+': "\033[48;5;11m",   # Yellow Rainbow
-    '#': "\033[48;5;10m",   # Green rainbow
-    '=': "\033[48;5;33m",   # Light blue rainbow
-    ';': "\033[48;5;19m",   # Dark blue rainbow
-    '*': "\033[48;5;8m",    # Gray cat face
+    '+': "\033[48;5;11m",  # Yellow Rainbow
+    '#': "\033[48;5;10m",  # Green rainbow
+    '=': "\033[48;5;33m",  # Light blue rainbow
+    ';': "\033[48;5;19m",  # Dark blue rainbow
+    '*': "\033[48;5;8m",  # Gray cat face
     '%': "\033[48;5;175m",  # Pink cheeks
 }
 
-class NyanFormatter(logging.Formatter):
 
+class NyanFormatter(logging.Formatter):
     animation = infinite_nyan()
 
     def format(self, record):
@@ -38,9 +37,9 @@ class NyanFormatter(logging.Formatter):
 
         # Split the log message on line breaks.
         msgs = log_message \
-                .replace('\r', '\n') \
-                .rstrip('\n') \
-                .split('\n')
+            .replace('\r', '\n') \
+            .rstrip('\n') \
+            .split('\n')
 
         lines = []
         for msg in msgs:

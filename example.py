@@ -9,5 +9,5 @@ handler = logging.StreamHandler()
 handler.setFormatter(NyanFormatter())
 logger.addHandler(handler)
 
-for _ in range(18 * 20):
+for _ in range(18 * 2000):
     logger.info('nyan')
