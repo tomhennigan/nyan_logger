@@ -21,7 +21,10 @@ nyan_colors = {
 
 
 class NyanFormatter(logging.Formatter):
-    animation = infinite_nyan()
+
+    def __init__(self, rainbow_length=2):
+        super(NyanFormatter, self).__init__()
+        self.animation = infinite_nyan(rainbow_length)
 
     def format(self, record):
         """Foramts a log record with the backgound color of each character set

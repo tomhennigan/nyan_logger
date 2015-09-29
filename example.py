@@ -6,8 +6,11 @@ logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
 handler = logging.StreamHandler()
-handler.setFormatter(NyanFormatter())
+handler.setFormatter(NyanFormatter(4))
 logger.addHandler(handler)
 
-for _ in range(18 * 2000):
-    logger.info('nyan')
+try:
+    for _ in range(18 * 2000):
+        logger.info('nyan')
+except KeyboardInterrupt:
+    exit()
