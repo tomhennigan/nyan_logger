@@ -27,7 +27,7 @@ class NyanFormatter(logging.Formatter):
         self.animation = infinite_nyan(rainbow_length)
 
     def format(self, record):
-        """Foramts a log record with the backgound color of each character set
+        """Formats a log record with the backgound color of each character set
         as the corresponding pixel of the current row of the nyan cat
         animation.
 
