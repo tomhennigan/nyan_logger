@@ -22,7 +22,7 @@ handler = logging.StreamHandler()
 handler.setFormatter(NyanFormatter())
 logger.addHandler(handler)
 
-for _ in xrange(90):
+for _ in range(90):
     logger.info('nyan')
 ```
 
